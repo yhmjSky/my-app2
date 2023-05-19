@@ -1,7 +1,7 @@
 /**
  *  KV example
  */
-const MY_NAMESPACE = 'cooolai';
+const MY_NAMESPACE = 'MY_KV';
 
 async function handleRequest(request) {
   const { method } = request;
@@ -22,6 +22,6 @@ async function handleRequest(request) {
   }
 }
 
-addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+// addEventListener('fetch', (event) => {
+//   event.respondWith(handleRequest(event.request));
+// });

@@ -4,9 +4,7 @@ account_id = "f785052107c721eaade341bb8c675fe0"
 main = "./.cloudflare/worker.js"
 site.bucket = "./.cloudflare/public"
 
-build.command = "npm run build"
-
-compatibility_date = "2022-07-12"
+compatibility_date = "2023-05-18"
 workers_dev = true
 
 KV_NAMESPACE_ID = "2c57616c0dd746769af400d7a709bfa0"
@@ -16,3 +14,20 @@ CLOUDFLARE_API_TOKEN = "Kr08Hc80Kf53Sxqob5VJK4UW4pwTkhHhqvdTCArU"
 kv_namespaces = [
   { binding = "MY_KV", id = "2c57616c0dd746769af400d7a709bfa0" }
 ]
+
+
+[build]
+command = "npm run build"
+
+[env.staging]
+kv_namespaces = [
+  { binding = "MY_KV", id = "2c57616c0dd746769af400d7a709bfa0" }
+]
+
+[env.production]
+kv_namespaces = [
+  { binding = "MY_KV", id = "2c57616c0dd746769af400d7a709bfa0" }
+]
+
+[env.production.vars]
+API_TOKEN = "Kr08Hc80Kf53Sxqob5VJK4UW4pwTkhHhqvdTCArU"

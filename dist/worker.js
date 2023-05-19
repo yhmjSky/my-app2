@@ -1,3 +1,5 @@
+// .cloudflare/worker.js
+import static_asset_manifest_json from "__STATIC_CONTENT_MANIFEST";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -23,15 +25,9 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-
-// .svelte-kit/output/server/chunks/index2.js
 function noop() {
 }
 function run(fn) {
@@ -96,7 +92,6 @@ function create_ssr_component(fn) {
     const $$ = {
       on_destroy,
       context: new Map(context || (parent_component ? parent_component.$$.context : [])),
-      // these will be immediately discarded
       on_mount: [],
       before_update: [],
       after_update: [],
@@ -118,7 +113,6 @@ function create_ssr_component(fn) {
         css: {
           code: Array.from(result.css).map((css) => css.code).join("\n"),
           map: null
-          // TODO
         },
         head: result.title + result.head
       };
@@ -126,7 +120,12 @@ function create_ssr_component(fn) {
     $$render
   };
 }
-var current_component, _boolean_attributes, ATTR_REGEX, CONTENT_REGEX, missing_component, on_destroy;
+var current_component;
+var _boolean_attributes;
+var ATTR_REGEX;
+var CONTENT_REGEX;
+var missing_component;
+var on_destroy;
 var init_index2 = __esm({
   ".svelte-kit/output/server/chunks/index2.js"() {
     _boolean_attributes = [
@@ -164,8 +163,6 @@ var init_index2 = __esm({
     };
   }
 });
-
-// .svelte-kit/output/server/chunks/index.js
 function readable(value, start) {
   return {
     subscribe: writable(value, start).subscribe
@@ -219,8 +216,6 @@ var init_chunks = __esm({
     subscriber_queue = [];
   }
 });
-
-// .svelte-kit/output/server/entries/fallbacks/layout.svelte.js
 var layout_svelte_exports = {};
 __export(layout_svelte_exports, {
   default: () => Layout
@@ -234,8 +229,6 @@ var init_layout_svelte = __esm({
     });
   }
 });
-
-// .svelte-kit/output/server/nodes/0.js
 var __exports = {};
 __export(__exports, {
   component: () => component,
@@ -244,7 +237,11 @@ __export(__exports, {
   index: () => index,
   stylesheets: () => stylesheets
 });
-var index, component, imports, stylesheets, fonts;
+var index;
+var component;
+var imports;
+var stylesheets;
+var fonts;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     index = 0;
@@ -254,8 +251,6 @@ var init__ = __esm({
     fonts = [];
   }
 });
-
-// .svelte-kit/output/server/entries/fallbacks/error.svelte.js
 var error_svelte_exports = {};
 __export(error_svelte_exports, {
   default: () => Error$1
@@ -291,7 +286,9 @@ function create_updated_store() {
     check
   };
 }
-var getStores, page, Error$1;
+var getStores;
+var page;
+var Error$1;
 var init_error_svelte = __esm({
   ".svelte-kit/output/server/entries/fallbacks/error.svelte.js"() {
     init_index2();
@@ -300,7 +297,6 @@ var init_error_svelte = __esm({
       url: notifiable_store({}),
       page: notifiable_store({}),
       navigating: writable(
-        /** @type {import('types').Navigation | null} */
         null
       ),
       updated: create_updated_store()
@@ -318,7 +314,6 @@ var init_error_svelte = __esm({
       };
     };
     page = {
-      /** @param {(value: any) => void} fn */
       subscribe(fn) {
         const store = getStores().page;
         return store.subscribe(fn);
@@ -333,8 +328,6 @@ var init_error_svelte = __esm({
     });
   }
 });
-
-// .svelte-kit/output/server/nodes/1.js
 var __exports2 = {};
 __export(__exports2, {
   component: () => component2,
@@ -343,35 +336,20 @@ __export(__exports2, {
   index: () => index2,
   stylesheets: () => stylesheets2
 });
-var index2, component2, imports2, stylesheets2, fonts2;
+var index2;
+var component2;
+var imports2;
+var stylesheets2;
+var fonts2;
 var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     index2 = 1;
     component2 = async () => (await Promise.resolve().then(() => (init_error_svelte(), error_svelte_exports))).default;
-    imports2 = ["_app/immutable/chunks/1.e2bfafa8.js", "_app/immutable/chunks/index.e8d42111.js", "_app/immutable/chunks/singletons.8c6d07a6.js"];
+    imports2 = ["_app/immutable/chunks/1.c4506bf9.js", "_app/immutable/chunks/index.e8d42111.js", "_app/immutable/chunks/singletons.23bfc3df.js"];
     stylesheets2 = [];
     fonts2 = [];
   }
 });
-
-// .svelte-kit/output/server/entries/pages/_page.server.ts.js
-var page_server_ts_exports = {};
-__export(page_server_ts_exports, {
-  load: () => load
-});
-var load;
-var init_page_server_ts = __esm({
-  ".svelte-kit/output/server/entries/pages/_page.server.ts.js"() {
-    load = async () => {
-      const mozi = "\u3053\u308C\u306F\u6587\u5B57\u3067\u3059\u3002";
-      return {
-        mozi
-      };
-    };
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/_page.svelte.js
 var page_svelte_exports = {};
 __export(page_svelte_exports, {
   default: () => Page
@@ -394,32 +372,28 @@ var init_page_svelte = __esm({
     });
   }
 });
-
-// .svelte-kit/output/server/nodes/2.js
 var __exports3 = {};
 __export(__exports3, {
   component: () => component3,
   fonts: () => fonts3,
   imports: () => imports3,
   index: () => index3,
-  server: () => page_server_ts_exports,
-  server_id: () => server_id,
   stylesheets: () => stylesheets3
 });
-var index3, component3, server_id, imports3, stylesheets3, fonts3;
+var index3;
+var component3;
+var imports3;
+var stylesheets3;
+var fonts3;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
-    init_page_server_ts();
     index3 = 2;
     component3 = async () => (await Promise.resolve().then(() => (init_page_svelte(), page_svelte_exports))).default;
-    server_id = "src/routes/+page.server.ts";
     imports3 = ["_app/immutable/chunks/2.719677e0.js", "_app/immutable/chunks/index.e8d42111.js"];
     stylesheets3 = [];
     fonts3 = [];
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/mime/Mime.js
 var require_Mime = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/mime/Mime.js"(exports, module) {
     "use strict";
@@ -472,22 +446,16 @@ var require_Mime = __commonJS({
     module.exports = Mime;
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/mime/types/standard.js
 var require_standard = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/mime/types/standard.js"(exports, module) {
     module.exports = { "application/andrew-inset": ["ez"], "application/applixware": ["aw"], "application/atom+xml": ["atom"], "application/atomcat+xml": ["atomcat"], "application/atomdeleted+xml": ["atomdeleted"], "application/atomsvc+xml": ["atomsvc"], "application/atsc-dwd+xml": ["dwd"], "application/atsc-held+xml": ["held"], "application/atsc-rsat+xml": ["rsat"], "application/bdoc": ["bdoc"], "application/calendar+xml": ["xcs"], "application/ccxml+xml": ["ccxml"], "application/cdfx+xml": ["cdfx"], "application/cdmi-capability": ["cdmia"], "application/cdmi-container": ["cdmic"], "application/cdmi-domain": ["cdmid"], "application/cdmi-object": ["cdmio"], "application/cdmi-queue": ["cdmiq"], "application/cu-seeme": ["cu"], "application/dash+xml": ["mpd"], "application/davmount+xml": ["davmount"], "application/docbook+xml": ["dbk"], "application/dssc+der": ["dssc"], "application/dssc+xml": ["xdssc"], "application/ecmascript": ["es", "ecma"], "application/emma+xml": ["emma"], "application/emotionml+xml": ["emotionml"], "application/epub+zip": ["epub"], "application/exi": ["exi"], "application/express": ["exp"], "application/fdt+xml": ["fdt"], "application/font-tdpfr": ["pfr"], "application/geo+json": ["geojson"], "application/gml+xml": ["gml"], "application/gpx+xml": ["gpx"], "application/gxf": ["gxf"], "application/gzip": ["gz"], "application/hjson": ["hjson"], "application/hyperstudio": ["stk"], "application/inkml+xml": ["ink", "inkml"], "application/ipfix": ["ipfix"], "application/its+xml": ["its"], "application/java-archive": ["jar", "war", "ear"], "application/java-serialized-object": ["ser"], "application/java-vm": ["class"], "application/javascript": ["js", "mjs"], "application/json": ["json", "map"], "application/json5": ["json5"], "application/jsonml+json": ["jsonml"], "application/ld+json": ["jsonld"], "application/lgr+xml": ["lgr"], "application/lost+xml": ["lostxml"], "application/mac-binhex40": ["hqx"], "application/mac-compactpro": ["cpt"], "application/mads+xml": ["mads"], "application/manifest+json": ["webmanifest"], "application/marc": ["mrc"], "application/marcxml+xml": ["mrcx"], "application/mathematica": ["ma", "nb", "mb"], "application/mathml+xml": ["mathml"], "application/mbox": ["mbox"], "application/mediaservercontrol+xml": ["mscml"], "application/metalink+xml": ["metalink"], "application/metalink4+xml": ["meta4"], "application/mets+xml": ["mets"], "application/mmt-aei+xml": ["maei"], "application/mmt-usd+xml": ["musd"], "application/mods+xml": ["mods"], "application/mp21": ["m21", "mp21"], "application/mp4": ["mp4s", "m4p"], "application/msword": ["doc", "dot"], "application/mxf": ["mxf"], "application/n-quads": ["nq"], "application/n-triples": ["nt"], "application/node": ["cjs"], "application/octet-stream": ["bin", "dms", "lrf", "mar", "so", "dist", "distz", "pkg", "bpk", "dump", "elc", "deploy", "exe", "dll", "deb", "dmg", "iso", "img", "msi", "msp", "msm", "buffer"], "application/oda": ["oda"], "application/oebps-package+xml": ["opf"], "application/ogg": ["ogx"], "application/omdoc+xml": ["omdoc"], "application/onenote": ["onetoc", "onetoc2", "onetmp", "onepkg"], "application/oxps": ["oxps"], "application/p2p-overlay+xml": ["relo"], "application/patch-ops-error+xml": ["xer"], "application/pdf": ["pdf"], "application/pgp-encrypted": ["pgp"], "application/pgp-signature": ["asc", "sig"], "application/pics-rules": ["prf"], "application/pkcs10": ["p10"], "application/pkcs7-mime": ["p7m", "p7c"], "application/pkcs7-signature": ["p7s"], "application/pkcs8": ["p8"], "application/pkix-attr-cert": ["ac"], "application/pkix-cert": ["cer"], "application/pkix-crl": ["crl"], "application/pkix-pkipath": ["pkipath"], "application/pkixcmp": ["pki"], "application/pls+xml": ["pls"], "application/postscript": ["ai", "eps", "ps"], "application/provenance+xml": ["provx"], "application/pskc+xml": ["pskcxml"], "application/raml+yaml": ["raml"], "application/rdf+xml": ["rdf", "owl"], "application/reginfo+xml": ["rif"], "application/relax-ng-compact-syntax": ["rnc"], "application/resource-lists+xml": ["rl"], "application/resource-lists-diff+xml": ["rld"], "application/rls-services+xml": ["rs"], "application/route-apd+xml": ["rapd"], "application/route-s-tsid+xml": ["sls"], "application/route-usd+xml": ["rusd"], "application/rpki-ghostbusters": ["gbr"], "application/rpki-manifest": ["mft"], "application/rpki-roa": ["roa"], "application/rsd+xml": ["rsd"], "application/rss+xml": ["rss"], "application/rtf": ["rtf"], "application/sbml+xml": ["sbml"], "application/scvp-cv-request": ["scq"], "application/scvp-cv-response": ["scs"], "application/scvp-vp-request": ["spq"], "application/scvp-vp-response": ["spp"], "application/sdp": ["sdp"], "application/senml+xml": ["senmlx"], "application/sensml+xml": ["sensmlx"], "application/set-payment-initiation": ["setpay"], "application/set-registration-initiation": ["setreg"], "application/shf+xml": ["shf"], "application/sieve": ["siv", "sieve"], "application/smil+xml": ["smi", "smil"], "application/sparql-query": ["rq"], "application/sparql-results+xml": ["srx"], "application/srgs": ["gram"], "application/srgs+xml": ["grxml"], "application/sru+xml": ["sru"], "application/ssdl+xml": ["ssdl"], "application/ssml+xml": ["ssml"], "application/swid+xml": ["swidtag"], "application/tei+xml": ["tei", "teicorpus"], "application/thraud+xml": ["tfi"], "application/timestamped-data": ["tsd"], "application/toml": ["toml"], "application/trig": ["trig"], "application/ttml+xml": ["ttml"], "application/ubjson": ["ubj"], "application/urc-ressheet+xml": ["rsheet"], "application/urc-targetdesc+xml": ["td"], "application/voicexml+xml": ["vxml"], "application/wasm": ["wasm"], "application/widget": ["wgt"], "application/winhlp": ["hlp"], "application/wsdl+xml": ["wsdl"], "application/wspolicy+xml": ["wspolicy"], "application/xaml+xml": ["xaml"], "application/xcap-att+xml": ["xav"], "application/xcap-caps+xml": ["xca"], "application/xcap-diff+xml": ["xdf"], "application/xcap-el+xml": ["xel"], "application/xcap-ns+xml": ["xns"], "application/xenc+xml": ["xenc"], "application/xhtml+xml": ["xhtml", "xht"], "application/xliff+xml": ["xlf"], "application/xml": ["xml", "xsl", "xsd", "rng"], "application/xml-dtd": ["dtd"], "application/xop+xml": ["xop"], "application/xproc+xml": ["xpl"], "application/xslt+xml": ["*xsl", "xslt"], "application/xspf+xml": ["xspf"], "application/xv+xml": ["mxml", "xhvml", "xvml", "xvm"], "application/yang": ["yang"], "application/yin+xml": ["yin"], "application/zip": ["zip"], "audio/3gpp": ["*3gpp"], "audio/adpcm": ["adp"], "audio/amr": ["amr"], "audio/basic": ["au", "snd"], "audio/midi": ["mid", "midi", "kar", "rmi"], "audio/mobile-xmf": ["mxmf"], "audio/mp3": ["*mp3"], "audio/mp4": ["m4a", "mp4a"], "audio/mpeg": ["mpga", "mp2", "mp2a", "mp3", "m2a", "m3a"], "audio/ogg": ["oga", "ogg", "spx", "opus"], "audio/s3m": ["s3m"], "audio/silk": ["sil"], "audio/wav": ["wav"], "audio/wave": ["*wav"], "audio/webm": ["weba"], "audio/xm": ["xm"], "font/collection": ["ttc"], "font/otf": ["otf"], "font/ttf": ["ttf"], "font/woff": ["woff"], "font/woff2": ["woff2"], "image/aces": ["exr"], "image/apng": ["apng"], "image/avif": ["avif"], "image/bmp": ["bmp"], "image/cgm": ["cgm"], "image/dicom-rle": ["drle"], "image/emf": ["emf"], "image/fits": ["fits"], "image/g3fax": ["g3"], "image/gif": ["gif"], "image/heic": ["heic"], "image/heic-sequence": ["heics"], "image/heif": ["heif"], "image/heif-sequence": ["heifs"], "image/hej2k": ["hej2"], "image/hsj2": ["hsj2"], "image/ief": ["ief"], "image/jls": ["jls"], "image/jp2": ["jp2", "jpg2"], "image/jpeg": ["jpeg", "jpg", "jpe"], "image/jph": ["jph"], "image/jphc": ["jhc"], "image/jpm": ["jpm"], "image/jpx": ["jpx", "jpf"], "image/jxr": ["jxr"], "image/jxra": ["jxra"], "image/jxrs": ["jxrs"], "image/jxs": ["jxs"], "image/jxsc": ["jxsc"], "image/jxsi": ["jxsi"], "image/jxss": ["jxss"], "image/ktx": ["ktx"], "image/ktx2": ["ktx2"], "image/png": ["png"], "image/sgi": ["sgi"], "image/svg+xml": ["svg", "svgz"], "image/t38": ["t38"], "image/tiff": ["tif", "tiff"], "image/tiff-fx": ["tfx"], "image/webp": ["webp"], "image/wmf": ["wmf"], "message/disposition-notification": ["disposition-notification"], "message/global": ["u8msg"], "message/global-delivery-status": ["u8dsn"], "message/global-disposition-notification": ["u8mdn"], "message/global-headers": ["u8hdr"], "message/rfc822": ["eml", "mime"], "model/3mf": ["3mf"], "model/gltf+json": ["gltf"], "model/gltf-binary": ["glb"], "model/iges": ["igs", "iges"], "model/mesh": ["msh", "mesh", "silo"], "model/mtl": ["mtl"], "model/obj": ["obj"], "model/step+xml": ["stpx"], "model/step+zip": ["stpz"], "model/step-xml+zip": ["stpxz"], "model/stl": ["stl"], "model/vrml": ["wrl", "vrml"], "model/x3d+binary": ["*x3db", "x3dbz"], "model/x3d+fastinfoset": ["x3db"], "model/x3d+vrml": ["*x3dv", "x3dvz"], "model/x3d+xml": ["x3d", "x3dz"], "model/x3d-vrml": ["x3dv"], "text/cache-manifest": ["appcache", "manifest"], "text/calendar": ["ics", "ifb"], "text/coffeescript": ["coffee", "litcoffee"], "text/css": ["css"], "text/csv": ["csv"], "text/html": ["html", "htm", "shtml"], "text/jade": ["jade"], "text/jsx": ["jsx"], "text/less": ["less"], "text/markdown": ["markdown", "md"], "text/mathml": ["mml"], "text/mdx": ["mdx"], "text/n3": ["n3"], "text/plain": ["txt", "text", "conf", "def", "list", "log", "in", "ini"], "text/richtext": ["rtx"], "text/rtf": ["*rtf"], "text/sgml": ["sgml", "sgm"], "text/shex": ["shex"], "text/slim": ["slim", "slm"], "text/spdx": ["spdx"], "text/stylus": ["stylus", "styl"], "text/tab-separated-values": ["tsv"], "text/troff": ["t", "tr", "roff", "man", "me", "ms"], "text/turtle": ["ttl"], "text/uri-list": ["uri", "uris", "urls"], "text/vcard": ["vcard"], "text/vtt": ["vtt"], "text/xml": ["*xml"], "text/yaml": ["yaml", "yml"], "video/3gpp": ["3gp", "3gpp"], "video/3gpp2": ["3g2"], "video/h261": ["h261"], "video/h263": ["h263"], "video/h264": ["h264"], "video/iso.segment": ["m4s"], "video/jpeg": ["jpgv"], "video/jpm": ["*jpm", "jpgm"], "video/mj2": ["mj2", "mjp2"], "video/mp2t": ["ts"], "video/mp4": ["mp4", "mp4v", "mpg4"], "video/mpeg": ["mpeg", "mpg", "mpe", "m1v", "m2v"], "video/ogg": ["ogv"], "video/quicktime": ["qt", "mov"], "video/webm": ["webm"] };
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/mime/types/other.js
 var require_other = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/mime/types/other.js"(exports, module) {
     module.exports = { "application/prs.cww": ["cww"], "application/vnd.1000minds.decision-model+xml": ["1km"], "application/vnd.3gpp.pic-bw-large": ["plb"], "application/vnd.3gpp.pic-bw-small": ["psb"], "application/vnd.3gpp.pic-bw-var": ["pvb"], "application/vnd.3gpp2.tcap": ["tcap"], "application/vnd.3m.post-it-notes": ["pwn"], "application/vnd.accpac.simply.aso": ["aso"], "application/vnd.accpac.simply.imp": ["imp"], "application/vnd.acucobol": ["acu"], "application/vnd.acucorp": ["atc", "acutc"], "application/vnd.adobe.air-application-installer-package+zip": ["air"], "application/vnd.adobe.formscentral.fcdt": ["fcdt"], "application/vnd.adobe.fxp": ["fxp", "fxpl"], "application/vnd.adobe.xdp+xml": ["xdp"], "application/vnd.adobe.xfdf": ["xfdf"], "application/vnd.ahead.space": ["ahead"], "application/vnd.airzip.filesecure.azf": ["azf"], "application/vnd.airzip.filesecure.azs": ["azs"], "application/vnd.amazon.ebook": ["azw"], "application/vnd.americandynamics.acc": ["acc"], "application/vnd.amiga.ami": ["ami"], "application/vnd.android.package-archive": ["apk"], "application/vnd.anser-web-certificate-issue-initiation": ["cii"], "application/vnd.anser-web-funds-transfer-initiation": ["fti"], "application/vnd.antix.game-component": ["atx"], "application/vnd.apple.installer+xml": ["mpkg"], "application/vnd.apple.keynote": ["key"], "application/vnd.apple.mpegurl": ["m3u8"], "application/vnd.apple.numbers": ["numbers"], "application/vnd.apple.pages": ["pages"], "application/vnd.apple.pkpass": ["pkpass"], "application/vnd.aristanetworks.swi": ["swi"], "application/vnd.astraea-software.iota": ["iota"], "application/vnd.audiograph": ["aep"], "application/vnd.balsamiq.bmml+xml": ["bmml"], "application/vnd.blueice.multipass": ["mpm"], "application/vnd.bmi": ["bmi"], "application/vnd.businessobjects": ["rep"], "application/vnd.chemdraw+xml": ["cdxml"], "application/vnd.chipnuts.karaoke-mmd": ["mmd"], "application/vnd.cinderella": ["cdy"], "application/vnd.citationstyles.style+xml": ["csl"], "application/vnd.claymore": ["cla"], "application/vnd.cloanto.rp9": ["rp9"], "application/vnd.clonk.c4group": ["c4g", "c4d", "c4f", "c4p", "c4u"], "application/vnd.cluetrust.cartomobile-config": ["c11amc"], "application/vnd.cluetrust.cartomobile-config-pkg": ["c11amz"], "application/vnd.commonspace": ["csp"], "application/vnd.contact.cmsg": ["cdbcmsg"], "application/vnd.cosmocaller": ["cmc"], "application/vnd.crick.clicker": ["clkx"], "application/vnd.crick.clicker.keyboard": ["clkk"], "application/vnd.crick.clicker.palette": ["clkp"], "application/vnd.crick.clicker.template": ["clkt"], "application/vnd.crick.clicker.wordbank": ["clkw"], "application/vnd.criticaltools.wbs+xml": ["wbs"], "application/vnd.ctc-posml": ["pml"], "application/vnd.cups-ppd": ["ppd"], "application/vnd.curl.car": ["car"], "application/vnd.curl.pcurl": ["pcurl"], "application/vnd.dart": ["dart"], "application/vnd.data-vision.rdz": ["rdz"], "application/vnd.dbf": ["dbf"], "application/vnd.dece.data": ["uvf", "uvvf", "uvd", "uvvd"], "application/vnd.dece.ttml+xml": ["uvt", "uvvt"], "application/vnd.dece.unspecified": ["uvx", "uvvx"], "application/vnd.dece.zip": ["uvz", "uvvz"], "application/vnd.denovo.fcselayout-link": ["fe_launch"], "application/vnd.dna": ["dna"], "application/vnd.dolby.mlp": ["mlp"], "application/vnd.dpgraph": ["dpg"], "application/vnd.dreamfactory": ["dfac"], "application/vnd.ds-keypoint": ["kpxx"], "application/vnd.dvb.ait": ["ait"], "application/vnd.dvb.service": ["svc"], "application/vnd.dynageo": ["geo"], "application/vnd.ecowin.chart": ["mag"], "application/vnd.enliven": ["nml"], "application/vnd.epson.esf": ["esf"], "application/vnd.epson.msf": ["msf"], "application/vnd.epson.quickanime": ["qam"], "application/vnd.epson.salt": ["slt"], "application/vnd.epson.ssf": ["ssf"], "application/vnd.eszigno3+xml": ["es3", "et3"], "application/vnd.ezpix-album": ["ez2"], "application/vnd.ezpix-package": ["ez3"], "application/vnd.fdf": ["fdf"], "application/vnd.fdsn.mseed": ["mseed"], "application/vnd.fdsn.seed": ["seed", "dataless"], "application/vnd.flographit": ["gph"], "application/vnd.fluxtime.clip": ["ftc"], "application/vnd.framemaker": ["fm", "frame", "maker", "book"], "application/vnd.frogans.fnc": ["fnc"], "application/vnd.frogans.ltf": ["ltf"], "application/vnd.fsc.weblaunch": ["fsc"], "application/vnd.fujitsu.oasys": ["oas"], "application/vnd.fujitsu.oasys2": ["oa2"], "application/vnd.fujitsu.oasys3": ["oa3"], "application/vnd.fujitsu.oasysgp": ["fg5"], "application/vnd.fujitsu.oasysprs": ["bh2"], "application/vnd.fujixerox.ddd": ["ddd"], "application/vnd.fujixerox.docuworks": ["xdw"], "application/vnd.fujixerox.docuworks.binder": ["xbd"], "application/vnd.fuzzysheet": ["fzs"], "application/vnd.genomatix.tuxedo": ["txd"], "application/vnd.geogebra.file": ["ggb"], "application/vnd.geogebra.tool": ["ggt"], "application/vnd.geometry-explorer": ["gex", "gre"], "application/vnd.geonext": ["gxt"], "application/vnd.geoplan": ["g2w"], "application/vnd.geospace": ["g3w"], "application/vnd.gmx": ["gmx"], "application/vnd.google-apps.document": ["gdoc"], "application/vnd.google-apps.presentation": ["gslides"], "application/vnd.google-apps.spreadsheet": ["gsheet"], "application/vnd.google-earth.kml+xml": ["kml"], "application/vnd.google-earth.kmz": ["kmz"], "application/vnd.grafeq": ["gqf", "gqs"], "application/vnd.groove-account": ["gac"], "application/vnd.groove-help": ["ghf"], "application/vnd.groove-identity-message": ["gim"], "application/vnd.groove-injector": ["grv"], "application/vnd.groove-tool-message": ["gtm"], "application/vnd.groove-tool-template": ["tpl"], "application/vnd.groove-vcard": ["vcg"], "application/vnd.hal+xml": ["hal"], "application/vnd.handheld-entertainment+xml": ["zmm"], "application/vnd.hbci": ["hbci"], "application/vnd.hhe.lesson-player": ["les"], "application/vnd.hp-hpgl": ["hpgl"], "application/vnd.hp-hpid": ["hpid"], "application/vnd.hp-hps": ["hps"], "application/vnd.hp-jlyt": ["jlt"], "application/vnd.hp-pcl": ["pcl"], "application/vnd.hp-pclxl": ["pclxl"], "application/vnd.hydrostatix.sof-data": ["sfd-hdstx"], "application/vnd.ibm.minipay": ["mpy"], "application/vnd.ibm.modcap": ["afp", "listafp", "list3820"], "application/vnd.ibm.rights-management": ["irm"], "application/vnd.ibm.secure-container": ["sc"], "application/vnd.iccprofile": ["icc", "icm"], "application/vnd.igloader": ["igl"], "application/vnd.immervision-ivp": ["ivp"], "application/vnd.immervision-ivu": ["ivu"], "application/vnd.insors.igm": ["igm"], "application/vnd.intercon.formnet": ["xpw", "xpx"], "application/vnd.intergeo": ["i2g"], "application/vnd.intu.qbo": ["qbo"], "application/vnd.intu.qfx": ["qfx"], "application/vnd.ipunplugged.rcprofile": ["rcprofile"], "application/vnd.irepository.package+xml": ["irp"], "application/vnd.is-xpr": ["xpr"], "application/vnd.isac.fcs": ["fcs"], "application/vnd.jam": ["jam"], "application/vnd.jcp.javame.midlet-rms": ["rms"], "application/vnd.jisp": ["jisp"], "application/vnd.joost.joda-archive": ["joda"], "application/vnd.kahootz": ["ktz", "ktr"], "application/vnd.kde.karbon": ["karbon"], "application/vnd.kde.kchart": ["chrt"], "application/vnd.kde.kformula": ["kfo"], "application/vnd.kde.kivio": ["flw"], "application/vnd.kde.kontour": ["kon"], "application/vnd.kde.kpresenter": ["kpr", "kpt"], "application/vnd.kde.kspread": ["ksp"], "application/vnd.kde.kword": ["kwd", "kwt"], "application/vnd.kenameaapp": ["htke"], "application/vnd.kidspiration": ["kia"], "application/vnd.kinar": ["kne", "knp"], "application/vnd.koan": ["skp", "skd", "skt", "skm"], "application/vnd.kodak-descriptor": ["sse"], "application/vnd.las.las+xml": ["lasxml"], "application/vnd.llamagraphics.life-balance.desktop": ["lbd"], "application/vnd.llamagraphics.life-balance.exchange+xml": ["lbe"], "application/vnd.lotus-1-2-3": ["123"], "application/vnd.lotus-approach": ["apr"], "application/vnd.lotus-freelance": ["pre"], "application/vnd.lotus-notes": ["nsf"], "application/vnd.lotus-organizer": ["org"], "application/vnd.lotus-screencam": ["scm"], "application/vnd.lotus-wordpro": ["lwp"], "application/vnd.macports.portpkg": ["portpkg"], "application/vnd.mapbox-vector-tile": ["mvt"], "application/vnd.mcd": ["mcd"], "application/vnd.medcalcdata": ["mc1"], "application/vnd.mediastation.cdkey": ["cdkey"], "application/vnd.mfer": ["mwf"], "application/vnd.mfmp": ["mfm"], "application/vnd.micrografx.flo": ["flo"], "application/vnd.micrografx.igx": ["igx"], "application/vnd.mif": ["mif"], "application/vnd.mobius.daf": ["daf"], "application/vnd.mobius.dis": ["dis"], "application/vnd.mobius.mbk": ["mbk"], "application/vnd.mobius.mqy": ["mqy"], "application/vnd.mobius.msl": ["msl"], "application/vnd.mobius.plc": ["plc"], "application/vnd.mobius.txf": ["txf"], "application/vnd.mophun.application": ["mpn"], "application/vnd.mophun.certificate": ["mpc"], "application/vnd.mozilla.xul+xml": ["xul"], "application/vnd.ms-artgalry": ["cil"], "application/vnd.ms-cab-compressed": ["cab"], "application/vnd.ms-excel": ["xls", "xlm", "xla", "xlc", "xlt", "xlw"], "application/vnd.ms-excel.addin.macroenabled.12": ["xlam"], "application/vnd.ms-excel.sheet.binary.macroenabled.12": ["xlsb"], "application/vnd.ms-excel.sheet.macroenabled.12": ["xlsm"], "application/vnd.ms-excel.template.macroenabled.12": ["xltm"], "application/vnd.ms-fontobject": ["eot"], "application/vnd.ms-htmlhelp": ["chm"], "application/vnd.ms-ims": ["ims"], "application/vnd.ms-lrm": ["lrm"], "application/vnd.ms-officetheme": ["thmx"], "application/vnd.ms-outlook": ["msg"], "application/vnd.ms-pki.seccat": ["cat"], "application/vnd.ms-pki.stl": ["*stl"], "application/vnd.ms-powerpoint": ["ppt", "pps", "pot"], "application/vnd.ms-powerpoint.addin.macroenabled.12": ["ppam"], "application/vnd.ms-powerpoint.presentation.macroenabled.12": ["pptm"], "application/vnd.ms-powerpoint.slide.macroenabled.12": ["sldm"], "application/vnd.ms-powerpoint.slideshow.macroenabled.12": ["ppsm"], "application/vnd.ms-powerpoint.template.macroenabled.12": ["potm"], "application/vnd.ms-project": ["mpp", "mpt"], "application/vnd.ms-word.document.macroenabled.12": ["docm"], "application/vnd.ms-word.template.macroenabled.12": ["dotm"], "application/vnd.ms-works": ["wps", "wks", "wcm", "wdb"], "application/vnd.ms-wpl": ["wpl"], "application/vnd.ms-xpsdocument": ["xps"], "application/vnd.mseq": ["mseq"], "application/vnd.musician": ["mus"], "application/vnd.muvee.style": ["msty"], "application/vnd.mynfc": ["taglet"], "application/vnd.neurolanguage.nlu": ["nlu"], "application/vnd.nitf": ["ntf", "nitf"], "application/vnd.noblenet-directory": ["nnd"], "application/vnd.noblenet-sealer": ["nns"], "application/vnd.noblenet-web": ["nnw"], "application/vnd.nokia.n-gage.ac+xml": ["*ac"], "application/vnd.nokia.n-gage.data": ["ngdat"], "application/vnd.nokia.n-gage.symbian.install": ["n-gage"], "application/vnd.nokia.radio-preset": ["rpst"], "application/vnd.nokia.radio-presets": ["rpss"], "application/vnd.novadigm.edm": ["edm"], "application/vnd.novadigm.edx": ["edx"], "application/vnd.novadigm.ext": ["ext"], "application/vnd.oasis.opendocument.chart": ["odc"], "application/vnd.oasis.opendocument.chart-template": ["otc"], "application/vnd.oasis.opendocument.database": ["odb"], "application/vnd.oasis.opendocument.formula": ["odf"], "application/vnd.oasis.opendocument.formula-template": ["odft"], "application/vnd.oasis.opendocument.graphics": ["odg"], "application/vnd.oasis.opendocument.graphics-template": ["otg"], "application/vnd.oasis.opendocument.image": ["odi"], "application/vnd.oasis.opendocument.image-template": ["oti"], "application/vnd.oasis.opendocument.presentation": ["odp"], "application/vnd.oasis.opendocument.presentation-template": ["otp"], "application/vnd.oasis.opendocument.spreadsheet": ["ods"], "application/vnd.oasis.opendocument.spreadsheet-template": ["ots"], "application/vnd.oasis.opendocument.text": ["odt"], "application/vnd.oasis.opendocument.text-master": ["odm"], "application/vnd.oasis.opendocument.text-template": ["ott"], "application/vnd.oasis.opendocument.text-web": ["oth"], "application/vnd.olpc-sugar": ["xo"], "application/vnd.oma.dd2+xml": ["dd2"], "application/vnd.openblox.game+xml": ["obgx"], "application/vnd.openofficeorg.extension": ["oxt"], "application/vnd.openstreetmap.data+xml": ["osm"], "application/vnd.openxmlformats-officedocument.presentationml.presentation": ["pptx"], "application/vnd.openxmlformats-officedocument.presentationml.slide": ["sldx"], "application/vnd.openxmlformats-officedocument.presentationml.slideshow": ["ppsx"], "application/vnd.openxmlformats-officedocument.presentationml.template": ["potx"], "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": ["xlsx"], "application/vnd.openxmlformats-officedocument.spreadsheetml.template": ["xltx"], "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ["docx"], "application/vnd.openxmlformats-officedocument.wordprocessingml.template": ["dotx"], "application/vnd.osgeo.mapguide.package": ["mgp"], "application/vnd.osgi.dp": ["dp"], "application/vnd.osgi.subsystem": ["esa"], "application/vnd.palm": ["pdb", "pqa", "oprc"], "application/vnd.pawaafile": ["paw"], "application/vnd.pg.format": ["str"], "application/vnd.pg.osasli": ["ei6"], "application/vnd.picsel": ["efif"], "application/vnd.pmi.widget": ["wg"], "application/vnd.pocketlearn": ["plf"], "application/vnd.powerbuilder6": ["pbd"], "application/vnd.previewsystems.box": ["box"], "application/vnd.proteus.magazine": ["mgz"], "application/vnd.publishare-delta-tree": ["qps"], "application/vnd.pvi.ptid1": ["ptid"], "application/vnd.quark.quarkxpress": ["qxd", "qxt", "qwd", "qwt", "qxl", "qxb"], "application/vnd.rar": ["rar"], "application/vnd.realvnc.bed": ["bed"], "application/vnd.recordare.musicxml": ["mxl"], "application/vnd.recordare.musicxml+xml": ["musicxml"], "application/vnd.rig.cryptonote": ["cryptonote"], "application/vnd.rim.cod": ["cod"], "application/vnd.rn-realmedia": ["rm"], "application/vnd.rn-realmedia-vbr": ["rmvb"], "application/vnd.route66.link66+xml": ["link66"], "application/vnd.sailingtracker.track": ["st"], "application/vnd.seemail": ["see"], "application/vnd.sema": ["sema"], "application/vnd.semd": ["semd"], "application/vnd.semf": ["semf"], "application/vnd.shana.informed.formdata": ["ifm"], "application/vnd.shana.informed.formtemplate": ["itp"], "application/vnd.shana.informed.interchange": ["iif"], "application/vnd.shana.informed.package": ["ipk"], "application/vnd.simtech-mindmapper": ["twd", "twds"], "application/vnd.smaf": ["mmf"], "application/vnd.smart.teacher": ["teacher"], "application/vnd.software602.filler.form+xml": ["fo"], "application/vnd.solent.sdkm+xml": ["sdkm", "sdkd"], "application/vnd.spotfire.dxp": ["dxp"], "application/vnd.spotfire.sfs": ["sfs"], "application/vnd.stardivision.calc": ["sdc"], "application/vnd.stardivision.draw": ["sda"], "application/vnd.stardivision.impress": ["sdd"], "application/vnd.stardivision.math": ["smf"], "application/vnd.stardivision.writer": ["sdw", "vor"], "application/vnd.stardivision.writer-global": ["sgl"], "application/vnd.stepmania.package": ["smzip"], "application/vnd.stepmania.stepchart": ["sm"], "application/vnd.sun.wadl+xml": ["wadl"], "application/vnd.sun.xml.calc": ["sxc"], "application/vnd.sun.xml.calc.template": ["stc"], "application/vnd.sun.xml.draw": ["sxd"], "application/vnd.sun.xml.draw.template": ["std"], "application/vnd.sun.xml.impress": ["sxi"], "application/vnd.sun.xml.impress.template": ["sti"], "application/vnd.sun.xml.math": ["sxm"], "application/vnd.sun.xml.writer": ["sxw"], "application/vnd.sun.xml.writer.global": ["sxg"], "application/vnd.sun.xml.writer.template": ["stw"], "application/vnd.sus-calendar": ["sus", "susp"], "application/vnd.svd": ["svd"], "application/vnd.symbian.install": ["sis", "sisx"], "application/vnd.syncml+xml": ["xsm"], "application/vnd.syncml.dm+wbxml": ["bdm"], "application/vnd.syncml.dm+xml": ["xdm"], "application/vnd.syncml.dmddf+xml": ["ddf"], "application/vnd.tao.intent-module-archive": ["tao"], "application/vnd.tcpdump.pcap": ["pcap", "cap", "dmp"], "application/vnd.tmobile-livetv": ["tmo"], "application/vnd.trid.tpt": ["tpt"], "application/vnd.triscape.mxs": ["mxs"], "application/vnd.trueapp": ["tra"], "application/vnd.ufdl": ["ufd", "ufdl"], "application/vnd.uiq.theme": ["utz"], "application/vnd.umajin": ["umj"], "application/vnd.unity": ["unityweb"], "application/vnd.uoml+xml": ["uoml"], "application/vnd.vcx": ["vcx"], "application/vnd.visio": ["vsd", "vst", "vss", "vsw"], "application/vnd.visionary": ["vis"], "application/vnd.vsf": ["vsf"], "application/vnd.wap.wbxml": ["wbxml"], "application/vnd.wap.wmlc": ["wmlc"], "application/vnd.wap.wmlscriptc": ["wmlsc"], "application/vnd.webturbo": ["wtb"], "application/vnd.wolfram.player": ["nbp"], "application/vnd.wordperfect": ["wpd"], "application/vnd.wqd": ["wqd"], "application/vnd.wt.stf": ["stf"], "application/vnd.xara": ["xar"], "application/vnd.xfdl": ["xfdl"], "application/vnd.yamaha.hv-dic": ["hvd"], "application/vnd.yamaha.hv-script": ["hvs"], "application/vnd.yamaha.hv-voice": ["hvp"], "application/vnd.yamaha.openscoreformat": ["osf"], "application/vnd.yamaha.openscoreformat.osfpvg+xml": ["osfpvg"], "application/vnd.yamaha.smaf-audio": ["saf"], "application/vnd.yamaha.smaf-phrase": ["spf"], "application/vnd.yellowriver-custom-menu": ["cmp"], "application/vnd.zul": ["zir", "zirz"], "application/vnd.zzazz.deck+xml": ["zaz"], "application/x-7z-compressed": ["7z"], "application/x-abiword": ["abw"], "application/x-ace-compressed": ["ace"], "application/x-apple-diskimage": ["*dmg"], "application/x-arj": ["arj"], "application/x-authorware-bin": ["aab", "x32", "u32", "vox"], "application/x-authorware-map": ["aam"], "application/x-authorware-seg": ["aas"], "application/x-bcpio": ["bcpio"], "application/x-bdoc": ["*bdoc"], "application/x-bittorrent": ["torrent"], "application/x-blorb": ["blb", "blorb"], "application/x-bzip": ["bz"], "application/x-bzip2": ["bz2", "boz"], "application/x-cbr": ["cbr", "cba", "cbt", "cbz", "cb7"], "application/x-cdlink": ["vcd"], "application/x-cfs-compressed": ["cfs"], "application/x-chat": ["chat"], "application/x-chess-pgn": ["pgn"], "application/x-chrome-extension": ["crx"], "application/x-cocoa": ["cco"], "application/x-conference": ["nsc"], "application/x-cpio": ["cpio"], "application/x-csh": ["csh"], "application/x-debian-package": ["*deb", "udeb"], "application/x-dgc-compressed": ["dgc"], "application/x-director": ["dir", "dcr", "dxr", "cst", "cct", "cxt", "w3d", "fgd", "swa"], "application/x-doom": ["wad"], "application/x-dtbncx+xml": ["ncx"], "application/x-dtbook+xml": ["dtb"], "application/x-dtbresource+xml": ["res"], "application/x-dvi": ["dvi"], "application/x-envoy": ["evy"], "application/x-eva": ["eva"], "application/x-font-bdf": ["bdf"], "application/x-font-ghostscript": ["gsf"], "application/x-font-linux-psf": ["psf"], "application/x-font-pcf": ["pcf"], "application/x-font-snf": ["snf"], "application/x-font-type1": ["pfa", "pfb", "pfm", "afm"], "application/x-freearc": ["arc"], "application/x-futuresplash": ["spl"], "application/x-gca-compressed": ["gca"], "application/x-glulx": ["ulx"], "application/x-gnumeric": ["gnumeric"], "application/x-gramps-xml": ["gramps"], "application/x-gtar": ["gtar"], "application/x-hdf": ["hdf"], "application/x-httpd-php": ["php"], "application/x-install-instructions": ["install"], "application/x-iso9660-image": ["*iso"], "application/x-iwork-keynote-sffkey": ["*key"], "application/x-iwork-numbers-sffnumbers": ["*numbers"], "application/x-iwork-pages-sffpages": ["*pages"], "application/x-java-archive-diff": ["jardiff"], "application/x-java-jnlp-file": ["jnlp"], "application/x-keepass2": ["kdbx"], "application/x-latex": ["latex"], "application/x-lua-bytecode": ["luac"], "application/x-lzh-compressed": ["lzh", "lha"], "application/x-makeself": ["run"], "application/x-mie": ["mie"], "application/x-mobipocket-ebook": ["prc", "mobi"], "application/x-ms-application": ["application"], "application/x-ms-shortcut": ["lnk"], "application/x-ms-wmd": ["wmd"], "application/x-ms-wmz": ["wmz"], "application/x-ms-xbap": ["xbap"], "application/x-msaccess": ["mdb"], "application/x-msbinder": ["obd"], "application/x-mscardfile": ["crd"], "application/x-msclip": ["clp"], "application/x-msdos-program": ["*exe"], "application/x-msdownload": ["*exe", "*dll", "com", "bat", "*msi"], "application/x-msmediaview": ["mvb", "m13", "m14"], "application/x-msmetafile": ["*wmf", "*wmz", "*emf", "emz"], "application/x-msmoney": ["mny"], "application/x-mspublisher": ["pub"], "application/x-msschedule": ["scd"], "application/x-msterminal": ["trm"], "application/x-mswrite": ["wri"], "application/x-netcdf": ["nc", "cdf"], "application/x-ns-proxy-autoconfig": ["pac"], "application/x-nzb": ["nzb"], "application/x-perl": ["pl", "pm"], "application/x-pilot": ["*prc", "*pdb"], "application/x-pkcs12": ["p12", "pfx"], "application/x-pkcs7-certificates": ["p7b", "spc"], "application/x-pkcs7-certreqresp": ["p7r"], "application/x-rar-compressed": ["*rar"], "application/x-redhat-package-manager": ["rpm"], "application/x-research-info-systems": ["ris"], "application/x-sea": ["sea"], "application/x-sh": ["sh"], "application/x-shar": ["shar"], "application/x-shockwave-flash": ["swf"], "application/x-silverlight-app": ["xap"], "application/x-sql": ["sql"], "application/x-stuffit": ["sit"], "application/x-stuffitx": ["sitx"], "application/x-subrip": ["srt"], "application/x-sv4cpio": ["sv4cpio"], "application/x-sv4crc": ["sv4crc"], "application/x-t3vm-image": ["t3"], "application/x-tads": ["gam"], "application/x-tar": ["tar"], "application/x-tcl": ["tcl", "tk"], "application/x-tex": ["tex"], "application/x-tex-tfm": ["tfm"], "application/x-texinfo": ["texinfo", "texi"], "application/x-tgif": ["*obj"], "application/x-ustar": ["ustar"], "application/x-virtualbox-hdd": ["hdd"], "application/x-virtualbox-ova": ["ova"], "application/x-virtualbox-ovf": ["ovf"], "application/x-virtualbox-vbox": ["vbox"], "application/x-virtualbox-vbox-extpack": ["vbox-extpack"], "application/x-virtualbox-vdi": ["vdi"], "application/x-virtualbox-vhd": ["vhd"], "application/x-virtualbox-vmdk": ["vmdk"], "application/x-wais-source": ["src"], "application/x-web-app-manifest+json": ["webapp"], "application/x-x509-ca-cert": ["der", "crt", "pem"], "application/x-xfig": ["fig"], "application/x-xliff+xml": ["*xlf"], "application/x-xpinstall": ["xpi"], "application/x-xz": ["xz"], "application/x-zmachine": ["z1", "z2", "z3", "z4", "z5", "z6", "z7", "z8"], "audio/vnd.dece.audio": ["uva", "uvva"], "audio/vnd.digital-winds": ["eol"], "audio/vnd.dra": ["dra"], "audio/vnd.dts": ["dts"], "audio/vnd.dts.hd": ["dtshd"], "audio/vnd.lucent.voice": ["lvp"], "audio/vnd.ms-playready.media.pya": ["pya"], "audio/vnd.nuera.ecelp4800": ["ecelp4800"], "audio/vnd.nuera.ecelp7470": ["ecelp7470"], "audio/vnd.nuera.ecelp9600": ["ecelp9600"], "audio/vnd.rip": ["rip"], "audio/x-aac": ["aac"], "audio/x-aiff": ["aif", "aiff", "aifc"], "audio/x-caf": ["caf"], "audio/x-flac": ["flac"], "audio/x-m4a": ["*m4a"], "audio/x-matroska": ["mka"], "audio/x-mpegurl": ["m3u"], "audio/x-ms-wax": ["wax"], "audio/x-ms-wma": ["wma"], "audio/x-pn-realaudio": ["ram", "ra"], "audio/x-pn-realaudio-plugin": ["rmp"], "audio/x-realaudio": ["*ra"], "audio/x-wav": ["*wav"], "chemical/x-cdx": ["cdx"], "chemical/x-cif": ["cif"], "chemical/x-cmdf": ["cmdf"], "chemical/x-cml": ["cml"], "chemical/x-csml": ["csml"], "chemical/x-xyz": ["xyz"], "image/prs.btif": ["btif"], "image/prs.pti": ["pti"], "image/vnd.adobe.photoshop": ["psd"], "image/vnd.airzip.accelerator.azv": ["azv"], "image/vnd.dece.graphic": ["uvi", "uvvi", "uvg", "uvvg"], "image/vnd.djvu": ["djvu", "djv"], "image/vnd.dvb.subtitle": ["*sub"], "image/vnd.dwg": ["dwg"], "image/vnd.dxf": ["dxf"], "image/vnd.fastbidsheet": ["fbs"], "image/vnd.fpx": ["fpx"], "image/vnd.fst": ["fst"], "image/vnd.fujixerox.edmics-mmr": ["mmr"], "image/vnd.fujixerox.edmics-rlc": ["rlc"], "image/vnd.microsoft.icon": ["ico"], "image/vnd.ms-dds": ["dds"], "image/vnd.ms-modi": ["mdi"], "image/vnd.ms-photo": ["wdp"], "image/vnd.net-fpx": ["npx"], "image/vnd.pco.b16": ["b16"], "image/vnd.tencent.tap": ["tap"], "image/vnd.valve.source.texture": ["vtf"], "image/vnd.wap.wbmp": ["wbmp"], "image/vnd.xiff": ["xif"], "image/vnd.zbrush.pcx": ["pcx"], "image/x-3ds": ["3ds"], "image/x-cmu-raster": ["ras"], "image/x-cmx": ["cmx"], "image/x-freehand": ["fh", "fhc", "fh4", "fh5", "fh7"], "image/x-icon": ["*ico"], "image/x-jng": ["jng"], "image/x-mrsid-image": ["sid"], "image/x-ms-bmp": ["*bmp"], "image/x-pcx": ["*pcx"], "image/x-pict": ["pic", "pct"], "image/x-portable-anymap": ["pnm"], "image/x-portable-bitmap": ["pbm"], "image/x-portable-graymap": ["pgm"], "image/x-portable-pixmap": ["ppm"], "image/x-rgb": ["rgb"], "image/x-tga": ["tga"], "image/x-xbitmap": ["xbm"], "image/x-xpixmap": ["xpm"], "image/x-xwindowdump": ["xwd"], "message/vnd.wfa.wsc": ["wsc"], "model/vnd.collada+xml": ["dae"], "model/vnd.dwf": ["dwf"], "model/vnd.gdl": ["gdl"], "model/vnd.gtw": ["gtw"], "model/vnd.mts": ["mts"], "model/vnd.opengex": ["ogex"], "model/vnd.parasolid.transmit.binary": ["x_b"], "model/vnd.parasolid.transmit.text": ["x_t"], "model/vnd.sap.vds": ["vds"], "model/vnd.usdz+zip": ["usdz"], "model/vnd.valve.source.compiled-map": ["bsp"], "model/vnd.vtu": ["vtu"], "text/prs.lines.tag": ["dsc"], "text/vnd.curl": ["curl"], "text/vnd.curl.dcurl": ["dcurl"], "text/vnd.curl.mcurl": ["mcurl"], "text/vnd.curl.scurl": ["scurl"], "text/vnd.dvb.subtitle": ["sub"], "text/vnd.fly": ["fly"], "text/vnd.fmi.flexstor": ["flx"], "text/vnd.graphviz": ["gv"], "text/vnd.in3d.3dml": ["3dml"], "text/vnd.in3d.spot": ["spot"], "text/vnd.sun.j2me.app-descriptor": ["jad"], "text/vnd.wap.wml": ["wml"], "text/vnd.wap.wmlscript": ["wmls"], "text/x-asm": ["s", "asm"], "text/x-c": ["c", "cc", "cxx", "cpp", "h", "hh", "dic"], "text/x-component": ["htc"], "text/x-fortran": ["f", "for", "f77", "f90"], "text/x-handlebars-template": ["hbs"], "text/x-java-source": ["java"], "text/x-lua": ["lua"], "text/x-markdown": ["mkd"], "text/x-nfo": ["nfo"], "text/x-opml": ["opml"], "text/x-org": ["*org"], "text/x-pascal": ["p", "pas"], "text/x-processing": ["pde"], "text/x-sass": ["sass"], "text/x-scss": ["scss"], "text/x-setext": ["etx"], "text/x-sfv": ["sfv"], "text/x-suse-ymp": ["ymp"], "text/x-uuencode": ["uu"], "text/x-vcalendar": ["vcs"], "text/x-vcard": ["vcf"], "video/vnd.dece.hd": ["uvh", "uvvh"], "video/vnd.dece.mobile": ["uvm", "uvvm"], "video/vnd.dece.pd": ["uvp", "uvvp"], "video/vnd.dece.sd": ["uvs", "uvvs"], "video/vnd.dece.video": ["uvv", "uvvv"], "video/vnd.dvb.file": ["dvb"], "video/vnd.fvt": ["fvt"], "video/vnd.mpegurl": ["mxu", "m4u"], "video/vnd.ms-playready.media.pyv": ["pyv"], "video/vnd.uvvu.mp4": ["uvu", "uvvu"], "video/vnd.vivo": ["viv"], "video/x-f4v": ["f4v"], "video/x-fli": ["fli"], "video/x-flv": ["flv"], "video/x-m4v": ["m4v"], "video/x-matroska": ["mkv", "mk3d", "mks"], "video/x-mng": ["mng"], "video/x-ms-asf": ["asf", "asx"], "video/x-ms-vob": ["vob"], "video/x-ms-wm": ["wm"], "video/x-ms-wmv": ["wmv"], "video/x-ms-wmx": ["wmx"], "video/x-ms-wvx": ["wvx"], "video/x-msvideo": ["avi"], "video/x-sgi-movie": ["movie"], "video/x-smv": ["smv"], "x-conference/x-cooltalk": ["ice"] };
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/mime/index.js
 var require_mime = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/mime/index.js"(exports, module) {
     "use strict";
@@ -495,8 +463,6 @@ var require_mime = __commonJS({
     module.exports = new Mime(require_standard(), require_other());
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/@cloudflare/kv-asset-handler/dist/types.js
 var require_types = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/@cloudflare/kv-asset-handler/dist/types.js"(exports) {
     "use strict";
@@ -531,8 +497,6 @@ var require_types = __commonJS({
     exports.InternalError = InternalError;
   }
 });
-
-// .svelte-kit/cloudflare-workers-tmp/node_modules/@cloudflare/kv-asset-handler/dist/index.js
 var require_dist = __commonJS({
   ".svelte-kit/cloudflare-workers-tmp/node_modules/@cloudflare/kv-asset-handler/dist/index.js"(exports) {
     "use strict";
@@ -580,7 +544,6 @@ var require_dist = __commonJS({
       browserTTL: null,
       edgeTTL: 2 * 60 * 60 * 24,
       bypassCache: false
-      // do not bypass Cloudflare's cache
     };
     var parseStringAsObject = (maybeString) => typeof maybeString === "string" ? JSON.parse(maybeString) : maybeString;
     var getAssetFromKVDefaultOptions = {
@@ -775,8 +738,6 @@ var require_dist = __commonJS({
     exports.getAssetFromKV = getAssetFromKV2;
   }
 });
-
-// .svelte-kit/output/server/chunks/internal.js
 init_index2();
 var base = "";
 var assets = base;
@@ -874,7 +835,6 @@ var options = {
   embedded: false,
   env_public_prefix: "PUBLIC_",
   hooks: null,
-  // added lazily, via `get_hooks`
   preload_strategy: "modulepreload",
   root: Root,
   service_worker: false,
@@ -940,13 +900,11 @@ var options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "j18z4k"
+  version_hash: "bwc4ad"
 };
 function get_hooks() {
   return {};
 }
-
-// .svelte-kit/output/server/index.js
 init_chunks();
 var DEV = false;
 function negotiate(accept, types) {
@@ -997,10 +955,6 @@ function is_form_content_type(request) {
   );
 }
 var HttpError = class HttpError2 {
-  /**
-   * @param {number} status
-   * @param {{message: string} extends App.Error ? (App.Error | string | undefined) : App.Error} body
-   */
   constructor(status, body) {
     this.status = status;
     if (typeof body === "string") {
@@ -1016,20 +970,12 @@ var HttpError = class HttpError2 {
   }
 };
 var Redirect = class Redirect2 {
-  /**
-   * @param {300 | 301 | 302 | 303 | 304 | 305 | 306 | 307 | 308} status
-   * @param {string} location
-   */
   constructor(status, location) {
     this.status = status;
     this.location = location;
   }
 };
 var ActionFailure = class ActionFailure2 {
-  /**
-   * @param {number} status
-   * @param {T} [data]
-   */
   constructor(status, data) {
     this.status = status;
     this.data = data;
@@ -1067,25 +1013,15 @@ function text(body, init2) {
   });
 }
 function coalesce_to_error(err) {
-  return err instanceof Error || err && /** @type {any} */
-  err.name && /** @type {any} */
-  err.message ? (
-    /** @type {Error} */
-    err
-  ) : new Error(JSON.stringify(err));
+  return err instanceof Error || err && err.name && err.message ? err : new Error(JSON.stringify(err));
 }
 function normalize_error(error2) {
-  return (
-    /** @type {Redirect | HttpError | Error} */
-    error2
-  );
+  return error2;
 }
 function method_not_allowed(mod, method) {
   return text(`${method} method not allowed`, {
     status: 405,
     headers: {
-      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
-      // "The server must generate an Allow header field in a 405 status code response"
       allow: allowed_methods(mod).join(", ")
     }
   });
@@ -1162,10 +1098,7 @@ function stringify_uses(node) {
   return `"uses":{${uses.join(",")}}`;
 }
 async function render_endpoint(event, mod, state) {
-  const method = (
-    /** @type {import('types').HttpMethod} */
-    event.request.method
-  );
+  const method = event.request.method;
   let handler = mod[method];
   if (!handler && method === "HEAD") {
     handler = mod.GET;
@@ -1186,7 +1119,6 @@ async function render_endpoint(event, mod, state) {
   }
   try {
     const response = await handler(
-      /** @type {import('types').RequestEvent<Record<string, any>>} */
       event
     );
     if (!(response instanceof Response)) {
@@ -1220,7 +1152,6 @@ function is_endpoint_request(event) {
 }
 function compact(arr) {
   return arr.filter(
-    /** @returns {val is NonNullable<T>} */
     (val) => val != null
   );
 }
@@ -1308,10 +1239,6 @@ var escaped = {
   "\u2029": "\\u2029"
 };
 var DevalueError = class extends Error {
-  /**
-   * @param {string} message
-   * @param {string[]} keys
-   */
   constructor(message, keys) {
     super(message);
     this.name = "DevalueError";
@@ -1453,11 +1380,8 @@ function uneval(value, replacer) {
       case "Date":
         return `new Date(${thing.getTime()})`;
       case "Array":
-        const members = (
-          /** @type {any[]} */
-          thing.map(
-            (v, i) => i in thing ? stringify2(v) : ""
-          )
+        const members = thing.map(
+          (v, i) => i in thing ? stringify2(v) : ""
         );
         const tail = thing.length === 0 || thing.length - 1 in thing ? "" : ",";
         return `[${members.join(",")}${tail}]`;
@@ -1482,7 +1406,6 @@ function uneval(value, replacer) {
       params.push(name);
       if (custom.has(thing)) {
         values.push(
-          /** @type {string} */
           custom.get(thing)
         );
         return;
@@ -1745,8 +1668,6 @@ async function handle_action_json_request(event, options2, server2) {
       {
         status: no_actions_error.status,
         headers: {
-          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
-          // "The server must generate an Allow header field in a 405 status code response"
           allow: "GET"
         }
       }
@@ -1761,12 +1682,8 @@ async function handle_action_json_request(event, options2, server2) {
       return action_json({
         type: "failure",
         status: data.status,
-        // @ts-expect-error we assign a string to what is supposed to be an object. That's ok
-        // because we don't use the object outside, and this way we have better code navigation
-        // through knowing where the related interface is used.
         data: stringify_action_response(
           data.data,
-          /** @type {string} */
           event.route.id
         )
       });
@@ -1774,10 +1691,8 @@ async function handle_action_json_request(event, options2, server2) {
       return action_json({
         type: "success",
         status: data ? 200 : 204,
-        // @ts-expect-error see comment above
         data: stringify_action_response(
           data,
-          /** @type {string} */
           event.route.id
         )
       });
@@ -1818,8 +1733,6 @@ async function handle_action_request(event, server2) {
   const actions = server2?.actions;
   if (!actions) {
     event.setHeaders({
-      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
-      // "The server must generate an Allow header field in a 405 status code response"
       allow: "GET"
     });
     return {
@@ -1842,7 +1755,6 @@ async function handle_action_request(event, server2) {
       return {
         type: "success",
         status: 200,
-        // @ts-expect-error this will be removed upon serialization, so `undefined` is the same as omission
         data
       };
     }
@@ -1901,10 +1813,7 @@ function try_deserialize(data, fn, route_id) {
   try {
     return fn(data);
   } catch (e) {
-    const error2 = (
-      /** @type {any} */
-      e
-    );
+    const error2 = e;
     if ("path" in error2) {
       let message = `Data returned from action inside ${route_id} is not serializable: ${error2.message}`;
       if (error2.path !== "")
@@ -1948,7 +1857,6 @@ async function load_server_data({ event, state, node, parent }) {
       uses.dependencies.add(url2.href);
       return event.fetch(info, init2);
     },
-    /** @param {string[]} deps */
     depends: (...deps) => {
       for (const dep of deps) {
         const { href } = new URL(dep, event.url);
@@ -1958,10 +1866,7 @@ async function load_server_data({ event, state, node, parent }) {
     params: new Proxy(event.params, {
       get: (target, key2) => {
         uses.params.add(key2);
-        return target[
-          /** @type {string} */
-          key2
-        ];
+        return target[key2];
       }
     }),
     parent: async () => {
@@ -1971,10 +1876,7 @@ async function load_server_data({ event, state, node, parent }) {
     route: new Proxy(event.route, {
       get: (target, key2) => {
         uses.route = true;
-        return target[
-          /** @type {'id'} */
-          key2
-        ];
+        return target[key2];
       }
     }),
     url
@@ -2058,10 +1960,7 @@ function create_universal_fetch(event, state, fetched, csr, resolve_opts) {
             fetched.push({
               url: same_origin ? url.href.slice(event.url.origin.length) : url.href,
               method: event.request.method,
-              request_body: (
-                /** @type {string | ArrayBufferView | undefined} */
-                input instanceof Request && cloned_body ? await stream_to_string(cloned_body) : init2?.body
-              ),
+              request_body: input instanceof Request && cloned_body ? await stream_to_string(cloned_body) : init2?.body,
               request_headers: init2?.headers,
               response_body: body,
               response: response2
@@ -2147,7 +2046,6 @@ var escape_html_attr_dict = {
   '"': "&quot;"
 };
 var escape_html_attr_regex = new RegExp(
-  // special characters
   `[${Object.keys(escape_html_attr_dict).join("")}]|[\\ud800-\\udbff](?![\\udc00-\\udfff])|[\\ud800-\\udbff][\\udc00-\\udfff]|[\\udc00-\\udfff]`,
   "g"
 );
@@ -2211,7 +2109,7 @@ function serialize_data(fetched, filter, prerendering = false) {
       attrs.push(`data-ttl="${ttl}"`);
     }
   }
-  return `<script ${attrs.join(" ")}>${safe_payload}<\/script>`;
+  return `<script ${attrs.join(" ")}>${safe_payload}</script>`;
 }
 var s = JSON.stringify;
 var encoder$2 = new TextEncoder();
@@ -2355,25 +2253,13 @@ var quoted = /* @__PURE__ */ new Set([
 ]);
 var crypto_pattern = /^(nonce|sha\d\d\d)-/;
 var BaseProvider = class {
-  /** @type {boolean} */
   #use_hashes;
-  /** @type {boolean} */
   #script_needs_csp;
-  /** @type {boolean} */
   #style_needs_csp;
-  /** @type {import('types').CspDirectives} */
   #directives;
-  /** @type {import('types').Csp.Source[]} */
   #script_src;
-  /** @type {import('types').Csp.Source[]} */
   #style_src;
-  /** @type {string} */
   #nonce;
-  /**
-   * @param {boolean} use_hashes
-   * @param {import('types').CspDirectives} directives
-   * @param {string} nonce
-   */
   constructor(use_hashes, directives, nonce) {
     this.#use_hashes = use_hashes;
     this.#directives = directives;
@@ -2388,7 +2274,6 @@ var BaseProvider = class {
     this.style_needs_nonce = this.#style_needs_csp && !this.#use_hashes;
     this.#nonce = nonce;
   }
-  /** @param {string} content */
   add_script(content) {
     if (this.#script_needs_csp) {
       if (this.#use_hashes) {
@@ -2398,7 +2283,6 @@ var BaseProvider = class {
       }
     }
   }
-  /** @param {string} content */
   add_style(content) {
     if (this.#style_needs_csp) {
       if (this.#use_hashes) {
@@ -2408,9 +2292,6 @@ var BaseProvider = class {
       }
     }
   }
-  /**
-   * @param {boolean} [is_meta]
-   */
   get_header(is_meta = false) {
     const header = [];
     const directives = { ...this.#directives };
@@ -2430,10 +2311,7 @@ var BaseProvider = class {
       if (is_meta && (key2 === "frame-ancestors" || key2 === "report-uri" || key2 === "sandbox")) {
         continue;
       }
-      const value = (
-        /** @type {string[] | true} */
-        directives[key2]
-      );
+      const value = directives[key2];
       if (!value)
         continue;
       const directive = [key2];
@@ -2458,11 +2336,6 @@ var CspProvider = class extends BaseProvider {
   }
 };
 var CspReportOnlyProvider = class extends BaseProvider {
-  /**
-   * @param {boolean} use_hashes
-   * @param {import('types').CspDirectives} directives
-   * @param {string} nonce
-   */
   constructor(use_hashes, directives, nonce) {
     super(use_hashes, directives, nonce);
     if (Object.values(directives).filter((v) => !!v).length > 0) {
@@ -2477,16 +2350,9 @@ var CspReportOnlyProvider = class extends BaseProvider {
   }
 };
 var Csp = class {
-  /** @readonly */
   nonce = generate_nonce();
-  /** @type {CspProvider} */
   csp_provider;
-  /** @type {CspReportOnlyProvider} */
   report_only_provider;
-  /**
-   * @param {import('./types').CspConfig} config
-   * @param {import('./types').CspOpts} opts
-   */
   constructor({ mode, directives, reportOnly }, { prerender }) {
     const use_hashes = mode === "hash" || mode === "auto" && prerender;
     this.csp_provider = new CspProvider(use_hashes, directives, this.nonce);
@@ -2498,12 +2364,10 @@ var Csp = class {
   get style_needs_nonce() {
     return this.csp_provider.style_needs_nonce || this.report_only_provider.style_needs_nonce;
   }
-  /** @param {string} content */
   add_script(content) {
     this.csp_provider.add_script(content);
     this.report_only_provider.add_script(content);
   }
-  /** @param {string} content */
   add_style(content) {
     this.csp_provider.add_style(content);
     this.report_only_provider.add_style(content);
@@ -2608,10 +2472,7 @@ async function render_response({
     }
     props.page = {
       error: error2,
-      params: (
-        /** @type {Record<string, any>} */
-        event.params
-      ),
+      params: event.params,
       route: event.route,
       status,
       url: event.url,
@@ -2745,7 +2606,6 @@ async function render_response({
       if (form_value) {
         serialized.form = uneval_action_response(
           form_value,
-          /** @type {string} */
           event.route.id
         );
       }
@@ -2789,7 +2649,7 @@ async function render_response({
 			`;
     csp.add_script(init_app);
     body += `
-			<script${csp.script_needs_nonce ? ` nonce="${csp.nonce}"` : ""}>${init_app}<\/script>
+			<script${csp.script_needs_nonce ? ` nonce="${csp.nonce}"` : ""}>${init_app}</script>
 		`;
   }
   const headers = new Headers({
@@ -2826,10 +2686,7 @@ async function render_response({
     head,
     body,
     assets: assets$1,
-    nonce: (
-      /** @type {string} */
-      csp.nonce
-    ),
+    nonce: csp.nonce,
     env: public_env
   });
   const transformed = await resolve_opts.transformPageChunk({
@@ -2869,17 +2726,12 @@ function get_data(event, options2, nodes, global) {
       const id = promise_id++;
       count += 1;
       thing.then(
-        /** @param {any} data */
         (data) => ({ data })
       ).catch(
-        /** @param {any} error */
         async (error2) => ({
           error: await handle_error_and_jsonify(event, options2, error2)
         })
       ).then(
-        /**
-         * @param {{data: any; error: any}} result
-         */
         async ({ data, error: error2 }) => {
           count -= 1;
           let str;
@@ -2894,7 +2746,7 @@ function get_data(event, options2, nodes, global) {
             data = void 0;
             str = uneval({ id, data, error: error2 }, replacer);
           }
-          push(`<script>${global}.resolve(${str})<\/script>
+          push(`<script>${global}.resolve(${str})</script>
 `);
           if (count === 0)
             done();
@@ -2916,7 +2768,6 @@ function get_data(event, options2, nodes, global) {
   } catch (e) {
     throw new Error(clarify_devalue_error(
       event,
-      /** @type {any} */
       e
     ));
   }
@@ -2924,12 +2775,8 @@ function get_data(event, options2, nodes, global) {
 function get_option(nodes, option) {
   return nodes.reduce(
     (value, node) => {
-      return (
-        /** @type {Value} TypeScript's too dumb to understand this */
-        node?.universal?.[option] ?? node?.server?.[option] ?? value
-      );
+      return node?.universal?.[option] ?? node?.server?.[option] ?? value;
     },
-    /** @type {Value | undefined} */
     void 0
   );
 }
@@ -2975,7 +2822,6 @@ async function respond_with_error({
         },
         {
           node: await manifest2._.nodes[1](),
-          // 1 is always the root error
           data: null,
           server_data: null
         }
@@ -3035,12 +2881,9 @@ async function render_data(event, route, options2, manifest2, state, invalidated
       return once(async () => {
         try {
           if (aborted) {
-            return (
-              /** @type {import('types').ServerDataSkippedNode} */
-              {
-                type: "skip"
-              }
-            );
+            return {
+              type: "skip"
+            };
           }
           const node = n == void 0 ? n : await manifest2._.nodes[n]();
           return load_server_data({
@@ -3050,10 +2893,7 @@ async function render_data(event, route, options2, manifest2, state, invalidated
             parent: async () => {
               const data2 = {};
               for (let j = 0; j < i; j += 1) {
-                const parent = (
-                  /** @type {import('types').ServerDataNode | null} */
-                  await functions[j]()
-                );
+                const parent = await functions[j]();
                 if (parent) {
                   Object.assign(data2, parent.data);
                 }
@@ -3069,12 +2909,9 @@ async function render_data(event, route, options2, manifest2, state, invalidated
     });
     const promises = functions.map(async (fn, i) => {
       if (!invalidated[i]) {
-        return (
-          /** @type {import('types').ServerDataSkippedNode} */
-          {
-            type: "skip"
-          }
-        );
+        return {
+          type: "skip"
+        };
       }
       return fn();
     });
@@ -3086,14 +2923,11 @@ async function render_data(event, route, options2, manifest2, state, invalidated
             throw error2;
           }
           length = Math.min(length, i + 1);
-          return (
-            /** @type {import('types').ServerErrorNode} */
-            {
-              type: "error",
-              error: await handle_error_and_jsonify(event, options2, error2),
-              status: error2 instanceof HttpError ? error2.status : void 0
-            }
-          );
+          return {
+            type: "error",
+            error: await handle_error_and_jsonify(event, options2, error2),
+            status: error2 instanceof HttpError ? error2.status : void 0
+          };
         })
       )
     );
@@ -3114,8 +2948,6 @@ async function render_data(event, route, options2, manifest2, state, invalidated
       }),
       {
         headers: {
-          // we use a proprietary content type to prevent buffering.
-          // the `text` prefix makes it inspectable
           "content-type": "text/sveltekit-data",
           "cache-control": "private, no-store"
         }
@@ -3150,25 +2982,21 @@ function get_data_json(event, options2, nodes) {
   let count = 0;
   const { iterator, push, done } = create_async_iterator();
   const reducers = {
-    /** @param {any} thing */
     Promise: (thing) => {
       if (typeof thing?.then === "function") {
         const id = promise_id++;
         count += 1;
         let key2 = "data";
         thing.catch(
-          /** @param {any} e */
           async (e) => {
             key2 = "error";
             return handle_error_and_jsonify(
               event,
               options2,
-              /** @type {any} */
               e
             );
           }
         ).then(
-          /** @param {any} value */
           async (value) => {
             let str;
             try {
@@ -3212,7 +3040,6 @@ function get_data_json(event, options2, nodes) {
   } catch (e) {
     throw new Error(clarify_devalue_error(
       event,
-      /** @type {any} */
       e
     ));
   }
@@ -3222,7 +3049,6 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
   if (state.depth > MAX_DEPTH) {
     return text(`Not found: ${event.url.pathname}`, {
       status: 404
-      // TODO in some cases this should be 500. not sure how to differentiate
     });
   }
   if (is_action_json_request(event)) {
@@ -3231,14 +3057,10 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
   }
   try {
     const nodes = await Promise.all([
-      // we use == here rather than === because [undefined] serializes as "[null]"
       ...page2.layouts.map((n) => n == void 0 ? n : manifest2._.nodes[n]()),
       manifest2._.nodes[page2.leaf]()
     ]);
-    const leaf_node = (
-      /** @type {import('types').SSRNode} */
-      nodes.at(-1)
-    );
+    const leaf_node = nodes.at(-1);
     let status = 200;
     let action_result = void 0;
     if (is_action_request(event)) {
@@ -3312,8 +3134,7 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
             }
           });
         } catch (e) {
-          load_error = /** @type {Error} */
-          e;
+          load_error = e;
           throw load_error;
         }
       });
@@ -3341,8 +3162,7 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
             csr
           });
         } catch (e) {
-          load_error = /** @type {Error} */
-          e;
+          load_error = e;
           throw load_error;
         }
       });
@@ -3379,10 +3199,7 @@ async function render_page(event, page2, options2, manifest2, state, resolve_opt
           const error2 = await handle_error_and_jsonify(event, options2, err);
           while (i--) {
             if (page2.errors[i]) {
-              const index4 = (
-                /** @type {number} */
-                page2.errors[i]
-              );
+              const index4 = page2.errors[i];
               const node2 = await manifest2._.nodes[index4]();
               let j = i;
               while (!branch[j])
@@ -3638,14 +3455,6 @@ function get_cookies(request, url, trailing_slash) {
     secure: url.hostname === "localhost" && url.protocol === "http:" ? false : true
   };
   const cookies = {
-    // The JSDoc param annotations appearing below for get, set and delete
-    // are necessary to expose the `cookie` library types to
-    // typescript users. `@type {import('types').Cookies}` above is not
-    // sufficient to do so.
-    /**
-     * @param {string} name
-     * @param {import('cookie').CookieParseOptions} opts
-     */
     get(name, opts) {
       const c = new_cookies[name];
       if (c && domain_matches(url.hostname, c.options.domain) && path_matches(url.pathname, c.options.path)) {
@@ -3656,9 +3465,6 @@ function get_cookies(request, url, trailing_slash) {
       const cookie = req_cookies[name];
       return cookie;
     },
-    /**
-     * @param {import('cookie').CookieParseOptions} opts
-     */
     getAll(opts) {
       const decoder = opts?.decode || decodeURIComponent;
       const cookies2 = parse_1(header, { decode: decoder });
@@ -3669,11 +3475,6 @@ function get_cookies(request, url, trailing_slash) {
       }
       return Object.entries(cookies2).map(([name, value]) => ({ name, value }));
     },
-    /**
-     * @param {string} name
-     * @param {string} value
-     * @param {import('cookie').CookieSerializeOptions} opts
-     */
     set(name, value, opts = {}) {
       let path = opts.path ?? default_path;
       new_cookies[name] = {
@@ -3686,21 +3487,12 @@ function get_cookies(request, url, trailing_slash) {
         }
       };
     },
-    /**
-     * @param {string} name
-     * @param {import('cookie').CookieSerializeOptions} opts
-     */
     delete(name, opts = {}) {
       cookies.set(name, "", {
         ...opts,
         maxAge: 0
       });
     },
-    /**
-     * @param {string} name
-     * @param {string} value
-     * @param {import('cookie').CookieSerializeOptions} opts
-     */
     serialize(name, value, opts) {
       return serialize_1(name, value, {
         ...defaults,
@@ -3710,7 +3502,6 @@ function get_cookies(request, url, trailing_slash) {
   };
   function get_cookie_header(destination, header2) {
     const combined_cookies = {
-      // cookies sent by the user agent have lowest precedence
       ...initial_cookies
     };
     for (const key2 in new_cookies) {
@@ -3986,7 +3777,6 @@ function create_fetch({ event, options: options2, manifest: manifest2, state, ge
         if (!request.headers.has("accept-language")) {
           request.headers.set(
             "accept-language",
-            /** @type {string} */
             event.request.headers.get("accept-language")
           );
         }
@@ -4001,7 +3791,6 @@ function create_fetch({ event, options: options2, manifest: manifest2, state, ge
             event.cookies.set(
               name,
               value,
-              /** @type {import('cookie').CookieSerializeOptions} */
               options3
             );
           }
@@ -4135,9 +3924,7 @@ async function respond(request, options2, manifest2, state) {
   const headers = {};
   let cookies_to_add = {};
   const event = {
-    // @ts-expect-error `cookies` and `fetch` need to be created after the `event` itself
     cookies: null,
-    // @ts-expect-error
     fetch: null,
     getClientAddress: state.getClientAddress || (() => {
       throw new Error(
@@ -4162,8 +3949,7 @@ async function respond(request, options2, manifest2, state) {
         } else {
           headers[lower] = value;
           if (state.prerendering && lower === "cache-control") {
-            state.prerendering.cache = /** @type {string} */
-            value;
+            state.prerendering.cache = value;
           }
         }
       }
@@ -4182,7 +3968,6 @@ async function respond(request, options2, manifest2, state) {
         trailing_slash = "always";
       } else if (route.page) {
         const nodes = await Promise.all([
-          // we use == here rather than === because [undefined] serializes as "[null]"
           ...route.page.layouts.map((n) => n == void 0 ? n : manifest2._.nodes[n]()),
           manifest2._.nodes[route.page.leaf]()
         ]);
@@ -4202,10 +3987,7 @@ async function respond(request, options2, manifest2, state) {
             status: 308,
             headers: {
               "x-sveltekit-normalize": "1",
-              location: (
-                // ensure paths starting with '//' are not treated as protocol-relative
-                (normalized.startsWith("//") ? url.origin + normalized : normalized) + (url.search === "?" ? "" : url.search)
-              )
+              location: (normalized.startsWith("//") ? url.origin + normalized : normalized) + (url.search === "?" ? "" : url.search)
             }
           });
         }
@@ -4228,7 +4010,6 @@ async function respond(request, options2, manifest2, state) {
           const value = headers[key2];
           response2.headers.set(
             key2,
-            /** @type {string} */
             value
           );
         }
@@ -4244,10 +4025,7 @@ async function respond(request, options2, manifest2, state) {
       if (if_none_match_value?.startsWith('W/"')) {
         if_none_match_value = if_none_match_value.substring(2);
       }
-      const etag = (
-        /** @type {string} */
-        response.headers.get("etag")
-      );
+      const etag = response.headers.get("etag");
       if (if_none_match_value === etag) {
         const headers2 = new Headers({ etag });
         for (const key2 of [
@@ -4272,7 +4050,6 @@ async function respond(request, options2, manifest2, state) {
       const location = response.headers.get("location");
       if (location) {
         return redirect_json_response(new Redirect(
-          /** @type {any} */
           response.status,
           location
         ));
@@ -4369,20 +4146,12 @@ async function respond(request, options2, manifest2, state) {
   }
 }
 var Server = class {
-  /** @type {import('types').SSROptions} */
   #options;
-  /** @type {import('types').SSRManifest} */
   #manifest;
-  /** @param {import('types').SSRManifest} manifest */
   constructor(manifest2) {
     this.#options = options;
     this.#manifest = manifest2;
   }
-  /**
-   * @param {{
-   *   env: Record<string, string>
-   * }} opts
-   */
   async init({ env }) {
     const entries = Object.entries(env);
     const prefix = this.#options.env_public_prefix;
@@ -4404,10 +4173,6 @@ var Server = class {
       }
     }
   }
-  /**
-   * @param {Request} request
-   * @param {import('types').RequestOptions} options
-   */
   async respond(request, options2) {
     if (!(request instanceof Request)) {
       throw new Error(
@@ -4421,15 +4186,13 @@ var Server = class {
     });
   }
 };
-
-// .svelte-kit/cloudflare-workers-tmp/manifest.js
 var manifest = {
   appDir: "_app",
   appPath: "_app",
   assets: /* @__PURE__ */ new Set(["favicon.png"]),
   mimeTypes: { ".png": "image/png" },
   _: {
-    client: { "start": "_app/immutable/entry/start.51bc33d5.js", "app": "_app/immutable/entry/app.bdcd1f1a.js", "imports": ["_app/immutable/entry/start.51bc33d5.js", "_app/immutable/chunks/index.e8d42111.js", "_app/immutable/chunks/singletons.8c6d07a6.js", "_app/immutable/entry/app.bdcd1f1a.js", "_app/immutable/chunks/index.e8d42111.js"], "stylesheets": [], "fonts": [] },
+    client: { "start": "_app/immutable/entry/start.2d034214.js", "app": "_app/immutable/entry/app.2abf46de.js", "imports": ["_app/immutable/entry/start.2d034214.js", "_app/immutable/chunks/index.e8d42111.js", "_app/immutable/chunks/singletons.23bfc3df.js", "_app/immutable/entry/app.2abf46de.js", "_app/immutable/chunks/index.e8d42111.js"], "stylesheets": [], "fonts": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
@@ -4450,19 +4213,11 @@ var manifest = {
   }
 };
 var prerendered = /* @__PURE__ */ new Map([]);
-
-// .svelte-kit/cloudflare-workers-tmp/entry.js
 var import_kv_asset_handler = __toESM(require_dist());
-import static_asset_manifest_json from "__STATIC_CONTENT_MANIFEST";
 var static_asset_manifest = JSON.parse(static_asset_manifest_json);
 var server = new Server(manifest);
 var app_path = `/${manifest.appPath}/`;
 var entry_default = {
-  /**
-   * @param {Request} req
-   * @param {any} env
-   * @param {any} context
-   */
   async fetch(req, env, context) {
     await server.init({ env });
     const url = new URL(req.url);
@@ -4473,8 +4228,6 @@ var entry_default = {
       const cache_control = url.pathname.startsWith(app_path + "immutable/") ? "public, immutable, max-age=31536000" : "no-cache";
       return new Response(res.body, {
         headers: {
-          // include original headers, minus cache-control which
-          // is overridden, and etag which is no longer useful
           "cache-control": cache_control,
           "content-type": res.headers.get("content-type"),
           "x-robots-tag": "noindex"
@@ -4500,7 +4253,6 @@ var entry_default = {
       platform: {
         env,
         context,
-        // @ts-expect-error lib.dom is interfering with workers-types
         caches
       },
       getClientAddress() {
@@ -4530,10 +4282,4 @@ function is_error(status) {
 export {
   entry_default as default
 };
-/*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
 //# sourceMappingURL=worker.js.map

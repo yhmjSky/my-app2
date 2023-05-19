@@ -3,6 +3,7 @@ node_modules
 /build
 /.svelte-kit
 /package
+.cloudflare
 .env
 .env.*
 !.env.example

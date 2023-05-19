@@ -1,6 +1,7 @@
 // import "./file/sum.wasm"
 import { encoding_for_model} from "@dqbd/tiktoken"
-import {createClient} from '@vercel/kv'
+import "./test_query_time"
+
 // import GPT3Tokenizer from 'gpt3-tokenizer';
 // const tokenizer = new GPT3Tokenizer({ type: 'gpt3' });
 // export function getTokens(input: string): number {
